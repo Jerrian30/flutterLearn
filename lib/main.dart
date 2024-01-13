@@ -1,38 +1,48 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+main(){
+  runApp( const MyApp());
 }
- 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home : Scaffold(
-        backgroundColor: Colors.white,
+      home: Scaffold(
         appBar: AppBar(
-          title: const Text("Hallo"),
+          backgroundColor: Colors.blue,
+          title:const Text(
+            "Column",
+            style: TextStyle(color: Colors.white),
+          ),
         ),
-        body: const Center(
-          child: Text(
-            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim magnam asperiores expedita doloremque nulla quam nesciunt illo nihil consequatur quaerat. Veritatis quidem dolor corporis nam odit praesentium impedit dolore inventore?",
-            // maxLines: 2,
-            // overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.justify,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 255, 255, 255),
-              backgroundColor: Color.fromARGB(255, 6, 65, 11),
-              letterSpacing: 20,
-              fontFamily: 'BungeeSpice',
+        body:  Stack(
+          children: [
+             Container(
+              height: 400 ,
+              width: 400,
+              color: Colors.red,
             ),
-            )
+            Container(
+              height: 300,
+              width: 300,
+              color: Colors.green,
+            ),
+            Container(
+              height: 200,
+              width: 200,
+              color: Colors.blue,
+            ),
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.yellow,
+            ),
+          ]
         ),
       ),
     );
   }
 }
-
