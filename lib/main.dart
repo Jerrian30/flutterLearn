@@ -12,153 +12,31 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("List Tile",
-          style: TextStyle(
-            backgroundColor: Colors.blue
-          ),
-          ),
+          backgroundColor: Colors.amber,
+          title : const Text("IMAGE WIDGET",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
+          )
         ),
-        body: ListView(
-           children: const [
-            ListTile(
-              contentPadding: EdgeInsets.symmetric(
-                vertical: 10,
-                horizontal: 10
+        body: Center(
+          child: Container(
+            height: 500,
+            width: 300,
+            color: Colors.red,
+            child: Image.network(
+              "https://picsum.photos/200", 
+                fit: BoxFit.cover ,
               ),
-              title: Text("Jerrian",
-                style: TextStyle(
-                  color: Colors.red
-                )
-              ),
-              subtitle: Text("Hello aku Jerry Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, molestiae veritatis voluptates a est iusto exercitationem labore reiciendis quos! Maxime quasi illo dicta. Nostrum optio pariatur praesentium, tempore et magni.",
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  color: Colors.green
-                ),
-              ),
-              leading: CircleAvatar(),
-              trailing: Text("10.00",
-                style: TextStyle(
-                  fontSize: 15
-                ),
-              ),
-              // tileColor: Color.fromARGB(255, 216, 230, 95),
-              dense: true,
+            // child: const Image(
               
-              
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            ListTile(
-              title: Text("Jerrian",
-                style: TextStyle(
-                  color: Colors.red
-                )
-              ),
-              subtitle: Text("Hello aku Jerry",
-                style: TextStyle(
-                  color: Colors.green
-                ),
-              ),
-              leading: CircleAvatar(),
-              trailing: Text("10.00",
-                style: TextStyle(
-                  fontSize: 15
-                ),
-              ),
-              
-            ),
-            Divider(
-              color : Colors.black
-            ),
-            ListTile(
-              title: Text("Jerrian",
-                style: TextStyle(
-                  color: Colors.red
-                )
-              ),
-              subtitle: Text("Hello aku Jerry",
-                style: TextStyle(
-                  color: Colors.green
-                ),
-              ),
-              leading: CircleAvatar(),
-              trailing: Text("10.00",
-                style: TextStyle(
-                  fontSize: 15
-                ),
-              ),
-              
-            ),
-            Divider(
-              color : Colors.black
-            ),
-            ListTile(
-              title: Text("Jerrian",
-                style: TextStyle(
-                  color: Colors.red
-                )
-              ),
-              subtitle: Text("Hello aku Jerry",
-                style: TextStyle(
-                  color: Colors.green
-                ),
-              ),
-              leading: CircleAvatar(),
-              trailing: Text("10.00",
-                style: TextStyle(
-                  fontSize: 15
-                ),
-              ),
-              
-            ),
-            Divider(
-              color : Colors.black
-            ),
-            ListTile(
-              title: Text("Jerrian",
-                style: TextStyle(
-                  color: Colors.red
-                )
-              ),
-              subtitle: Text("Hello aku Jerry",
-                style: TextStyle(
-                  color: Colors.green
-                ),
-              ),
-              leading: CircleAvatar(),
-              trailing: Text("10.00",
-                style: TextStyle(
-                  fontSize: 15
-                ),
-              ),
-              
-            ),
-            Divider(
-              color : Colors.black
-            ),
-            ListTile(
-              title: Text("Jerrian",
-                style: TextStyle(
-                  color: Colors.red
-                )
-              ),
-              subtitle: Text("Hello aku Jerry",
-                style: TextStyle(
-                  color: Colors.green
-                ),
-              ),
-              leading: CircleAvatar(),
-              trailing: Text("10.00",
-                style: TextStyle(
-                  fontSize: 15
-                ),
-              ),
-              
-            ),
-          ],
+            //   fit: BoxFit.cover, 
+            //   image : AssetImage("images/jerot.jpg"),
+            //   // image: NetworkImage("https://picsum.photos/30/600"),
+            // ),
+          ),
         ),
       ),
     );
