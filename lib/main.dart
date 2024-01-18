@@ -1,43 +1,72 @@
 import 'package:flutter/material.dart';
 
-main(){
-  runApp( const MyApp());
+void main() {
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  
+class MyApp extends StatefulWidget {
+  MyApp({Key? key}) : super(key: key);
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int counter = 1;
+
+  void incrementCounter() {
+    setState(() {
+      counter++;
+    });
+  }
+
+  void decrementCounter() {
+    setState(() {
+       
+        counter--;
+      
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Exstact WIdget"),
+          backgroundColor: const Color(0xff00ffff),
+          title: const Text(
+            "Dynamic Apps",
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
         ),
-        body: ListView( 
-          children: const [
-            ChatItem(),
-            ChatItem() 
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              counter.toString(),
+              style: TextStyle(
+                fontSize: 50,
+                color: Color.fromARGB(153, 131, 0, 0),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  onPressed: decrementCounter,
+                  child: Icon(Icons.remove),
+                ),
+                ElevatedButton(
+                  onPressed: incrementCounter,
+                  child: Icon(Icons.add),
+                ),
+              ],
+            )
           ],
         ),
       ),
-    );
-  }
-}
-
-class ChatItem extends StatelessWidget {
-  const ChatItem({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return const ListTile(
-      leading: CircleAvatar(),
-      title: Text("Jerrian"),
-      subtitle: Text("Hai aku Jerry"),
-      trailing: Text("10.00 PM"),
     );
   }
 }
